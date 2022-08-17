@@ -34,6 +34,7 @@ st.set_page_config(
 
 # row limit
 RowCap = 5_000_000
+REDIRECT_URI = 'https%3A%2F%2Fsanke342-google-search-console-connector-streamlit-app-uksz1c.streamlitapp.com'
 
 ###############################################################################
 
@@ -77,7 +78,8 @@ with tab1:
             start_icon=mt.icons.exit_to_app,
             onclick="none",
             style={"color": "#FFFFFF", "background": "#FF4B4B"},
-            href="https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=686079794781-0bt8ot3ie81iii7i17far5vj4s0p20t7.apps.googleusercontent.com&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fwebmasters.readonly&state=vryYlMrqKikWGlFVwqhnMpfqr1HMiq&prompt=consent&access_type=offline",
+            # href="https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=686079794781-0bt8ot3ie81iii7i17far5vj4s0p20t7.apps.googleusercontent.com&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fwebmasters.readonly&state=vryYlMrqKikWGlFVwqhnMpfqr1HMiq&prompt=consent&access_type=offline",
+            href=f"https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?redirect_uri={REDIRECT_URI}&prompt=consent&response_type=code&client_id={clientId}&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fwebmasters%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fwebmasters.readonly&access_type=offline&flowName=GeneralOAuthFlow",
         )
 
         mt.show(key="687")
